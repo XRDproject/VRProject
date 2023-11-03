@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 468740}
   - component: {fileID: 3363238}
   - component: {fileID: 2307726}
+  - component: {fileID: 5316693609196029550}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
@@ -170,6 +171,34 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5316693609196029550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdf29cbf8fa8b224c8b4ecb16ac0104e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barrelLocation: {fileID: 1287040346385292292}
+  triger: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  haptics: {fileID: -8222252007134549311, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  damage: 10
+  headDamage: 35
+  range: 100
+  fireRate: 2
+  impactForce: 6
+  maxAmmo: 8
+  animFireSpeed: 1
+  audioSource: {fileID: 0}
+  gunFireSound: {fileID: 0}
+  gunReloadSound: {fileID: 0}
+  gunNoAmmoSound: {fileID: 0}
+  hitEffect: {fileID: 0}
+  ammoText: {fileID: 0}
 --- !u!1 &132086
 GameObject:
   m_ObjectHideFlags: 0
