@@ -76,7 +76,7 @@ public class GunShoot : MonoBehaviour
     void Reload()
     {
         currentAmmo = maxAmmo;
-        ammoText.SetText(currentAmmo.ToString()); //Change ammo indicator
+        //ammoText.SetText(currentAmmo.ToString()); //Change ammo indicator
         //audioSource.PlayOneShot(gunReloadSound);
     }
 
