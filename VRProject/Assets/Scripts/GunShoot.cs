@@ -57,7 +57,7 @@ public class GunShoot : MonoBehaviour
                 if (ctx.control.device is XRController device)
                     Rumble(device);//vibrate
             }
-            //else audioSource.PlayOneShot(gunNoAmmoSound);
+            else audioSource.PlayOneShot(gunNoAmmoSound);
         };
 
         //Turn the gun to reload
@@ -77,17 +77,17 @@ public class GunShoot : MonoBehaviour
     {
         currentAmmo = maxAmmo;
         //ammoText.SetText(currentAmmo.ToString()); //Change ammo indicator
-        //audioSource.PlayOneShot(gunReloadSound);
+        audioSource.PlayOneShot(gunReloadSound);
     }
 
     //Note: method is called inside the animation, using an Animation event
     void Shoot()
     {
-        //audioSource.PlayOneShot(gunFireSound);
+        audioSource.PlayOneShot(gunFireSound);
         currentAmmo--;
         //ammoText.SetText(currentAmmo.ToString()); //Change ammo indicator
 
-        if (Physics.Raycast(barrelLocation.position, barrelLocation.transform.forward, out RaycastHit hit, range))
+        if (Physics.Raycast(barrelLocation.position, barrelLocation.transform.up, out RaycastHit hit, range))
         {
             Debug.Log(hit.transform.name);
             if (hit.transform.CompareTag("Player")) return;
@@ -102,11 +102,11 @@ public class GunShoot : MonoBehaviour
                 {
                     hitBox.OnBulletHit(damage);
                 }
-                //hitEffect.ShowHitEffect(hit, HitEffect.Effects.Blood, 1f);
+                hitEffect.ShowHitEffect(hit, HitEffect.Effects.Blood, 1f);
             }
             else
             {
-                //hitEffect.ShowHitEffect(hit, HitEffect.Effects.Hole, 4f);
+                hitEffect.ShowHitEffect(hit, HitEffect.Effects.Hole, 4f);
             }
             if (hit.rigidbody != null)
             {

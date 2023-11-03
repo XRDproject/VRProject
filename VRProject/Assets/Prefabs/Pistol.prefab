@@ -95,6 +95,8 @@ GameObject:
   - component: {fileID: 3363238}
   - component: {fileID: 2307726}
   - component: {fileID: 5316693609196029550}
+  - component: {fileID: 5447281239766101350}
+  - component: {fileID: 4356075185102440134}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
@@ -193,12 +195,123 @@ MonoBehaviour:
   impactForce: 6
   maxAmmo: 8
   animFireSpeed: 1
-  audioSource: {fileID: 0}
-  gunFireSound: {fileID: 0}
-  gunReloadSound: {fileID: 0}
-  gunNoAmmoSound: {fileID: 0}
-  hitEffect: {fileID: 0}
+  audioSource: {fileID: 4356075185102440134}
+  gunFireSound: {fileID: 8300000, guid: 27b00cba51e31a74ea56dabeb6b8cefb, type: 3}
+  gunReloadSound: {fileID: 8300000, guid: 9074516bac555d14db31b50af37b76b6, type: 3}
+  gunNoAmmoSound: {fileID: 8300000, guid: 16942b0b58d687f4f91b07488bf51f94, type: 3}
+  hitEffect: {fileID: 5447281239766101350}
   ammoText: {fileID: 0}
+--- !u!114 &5447281239766101350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57c3fe602d2ddd745bc7f496a63e881b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletHole: {fileID: 2278457755078455827, guid: bed2fcc73d54d1f46ae3aaa726490f02, type: 3}
+  impactEffect: {fileID: 2278457755078455827, guid: bed2fcc73d54d1f46ae3aaa726490f02, type: 3}
+  bloodEffect: {fileID: 2278457755078455827, guid: bed2fcc73d54d1f46ae3aaa726490f02, type: 3}
+--- !u!82 &4356075185102440134
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124344}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &132086
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,10 +670,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113014067770691829}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01708, y: 0, z: 0.00307}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.01669, y: 0, z: 0.00307}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 460606}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
