@@ -22,7 +22,8 @@ public class GunShoot : MonoBehaviour
     public float range = 100f;
     public float fireRate = 2f;
     public float impactForce = 6f;
-    public int maxAmmo = 12; 
+    public int maxAmmo = 12;
+    public bool canShoot = true;
     [Range(1.0f, 5.0f)]
     [Tooltip("Changes how fast the gun fires")]public float animFireSpeed = 1f;
 
@@ -50,7 +51,7 @@ public class GunShoot : MonoBehaviour
     {
         triger.action.started += ctx =>
         {
-            if (currentAmmo > 0)
+            if (currentAmmo > 0 && canShoot)
             {
                 Shoot();
                 //OpenXRInput.SendHapticImpulse(haptics, 1f, 4f, XRController.rightHand); //Right Hand Haptic Impulse, not working, found alternative

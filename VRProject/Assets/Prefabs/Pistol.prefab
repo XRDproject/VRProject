@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 1275034460743410167}
   m_Layer: 0
   m_Name: Pistol
-  m_TagString: Untagged
+  m_TagString: Pistol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -195,6 +195,7 @@ MonoBehaviour:
   fireRate: 2
   impactForce: 6
   maxAmmo: 8
+  canShoot: 1
   animFireSpeed: 1
   audioSource: {fileID: 4356075185102440134}
   gunFireSound: {fileID: 8300000, guid: 27b00cba51e31a74ea56dabeb6b8cefb, type: 3}
@@ -332,10 +333,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.0054181144
-  m_Height: 0.03571923
+  m_Radius: 0.0012389154
+  m_Height: 0.027074823
   m_Direction: 0
-  m_Center: {x: -0.008590899, y: 0.0005308848, z: 0.0010618992}
+  m_Center: {x: -0.011548491, y: 0.00010298602, z: 0.0037770625}
 --- !u!1 &132086
 GameObject:
   m_ObjectHideFlags: 0

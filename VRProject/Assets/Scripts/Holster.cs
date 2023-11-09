@@ -21,11 +21,19 @@ public class Holster : MonoBehaviour
     {
         Debug.Log("Colliding with " + objectName.gameObject.name);
         gameObject.GetComponent<Renderer>().material.color = collisiionColor.color;
+        if (objectName.CompareTag("Pistol"))
+        {
+            objectName.GetComponent<GunShoot>().canShoot = false;
+        }
     }
 
     void OnTriggerExit(Collider objectName)
     {
         Debug.Log("Exited collision with " + objectName.gameObject.name);
         gameObject.GetComponent<Renderer>().material.color = ogColor;
+        if (objectName.CompareTag("Pistol"))
+        {
+            objectName.GetComponent<GunShoot>().canShoot = true;
+        }
     }
 }
