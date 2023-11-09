@@ -1976,6 +1976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33bad871c41164c4dbd1242c7e5b5917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisiionColor: {fileID: 2100000, guid: 05c4df2a0debc664f87c324e6f80b653, type: 2}
 --- !u!54 &573640997
 Rigidbody:
   m_ObjectHideFlags: 0
