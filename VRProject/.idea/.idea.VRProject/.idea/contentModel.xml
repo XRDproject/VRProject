@@ -215,12 +215,13 @@
           <e p="SampleScene" t="Include" />
         </e>
         <e p="Scripts" t="Include">
-          <e p="EnemyControls" t="Include" />
+          <e p="Enemy.cs" t="Include" />
           <e p="GunShoot.cs" t="Include" />
           <e p="Health.cs" t="Include" />
           <e p="HitBox.cs" t="Include" />
           <e p="HitEffect.cs" t="Include" />
           <e p="Holster.cs" t="Include" />
+          <e p="SceneMover.cs" t="Include" />
           <e p="Target.cs" t="Include" />
         </e>
         <e p="Settings" t="Include">
@@ -287,7 +288,9 @@
           <e p="Materials" t="Include">
             <e p="Anchor Materials" t="Include" />
             <e p="Controller" t="Include" />
-            <e p="Environment" t="Include" />
+            <e p="Environment" t="Include">
+              <e p="Materials" t="Include" />
+            </e>
             <e p="Locomotion" t="Include" />
             <e p="Particles" t="Include" />
             <e p="Pointer" t="Include" />
