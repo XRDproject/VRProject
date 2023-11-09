@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 5316693609196029550}
   - component: {fileID: 5447281239766101350}
   - component: {fileID: 4356075185102440134}
+  - component: {fileID: 1275034460743410167}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
@@ -312,6 +313,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &1275034460743410167
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124344}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.0054181144
+  m_Height: 0.03571923
+  m_Direction: 0
+  m_Center: {x: -0.008590899, y: 0.0005308848, z: 0.0010618992}
 --- !u!1 &132086
 GameObject:
   m_ObjectHideFlags: 0
