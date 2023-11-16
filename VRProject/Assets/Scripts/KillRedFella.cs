@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class KillRedFella : MonoBehaviour
 {
+    bool fellaDied = false;
     public void Die(){
+        fellaDied = true;
         Destroy(gameObject);
     }
     // Start is called before the first frame update

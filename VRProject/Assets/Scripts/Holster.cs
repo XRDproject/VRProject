@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro; // Make sure you are using the TextMeshPro namespace
+using TMPro;
+using System; // Make sure you are using the TextMeshPro namespace
 
 public class Holster : MonoBehaviour
 {
@@ -12,9 +13,11 @@ public class Holster : MonoBehaviour
      [SerializeField] AudioSource audioSource1;
      [SerializeField] AudioSource audioSource2;
     [SerializeField] AudioClip BellSound;
+    KillRedFella fellaDied;
     float timeRemaining = 10;
     bool timerIsRunning = false;
     bool timeHasCome = false;
+    bool playerDead = false;
 
     // [SerializeField] TextMeshPro SecondText; // Uncomment if you have a second TextMeshPro that you want to use later
 
@@ -35,7 +38,7 @@ public class Holster : MonoBehaviour
             FirstText.gameObject.SetActive(false); // Changed to SetActive for disabling the GameObject
         audioSource1.Play();
         timerIsRunning = true;
-        timeRemaining = Random.Range(5, 10);
+        timeRemaining = UnityEngine.Random.Range(5, 10);
     }
 
     void OnTriggerStay(Collider objectName)
@@ -64,12 +67,21 @@ public class Holster : MonoBehaviour
             {
                 objectName.GetComponent<GunShoot>().canShoot = true;
             }
+            StartCoroutine(KillThePlayer());
             timeHasCome = false;
         }
     }
 
 
-
+    IEnumerator  KillThePlayer(){
+         yield return new WaitForSeconds(3);
+         if (!fellaDied)
+        {
+            playerDead = true;
+            // Handle player's death
+            Debug.Log("Player has died.");
+        }
+    }
 
     void OnTriggerExit(Collider objectName)
     {

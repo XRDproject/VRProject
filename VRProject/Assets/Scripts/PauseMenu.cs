@@ -44,6 +44,10 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadSceneAsync(0);
 
     }
+    public void PlayAgain(){
+        SceneManager.LoadSceneAsync(1);
+
+    }
 
     public void Pause()
     {
