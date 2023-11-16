@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+
 
 public class PauseMenu : MonoBehaviour
 {
@@ -38,8 +40,12 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
     }
+    public void MainMenu(){
+        SceneManager.LoadSceneAsync(0);
 
-    void Pause()
+    }
+
+    public void Pause()
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
