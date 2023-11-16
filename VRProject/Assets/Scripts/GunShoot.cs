@@ -94,15 +94,8 @@ public class GunShoot : MonoBehaviour
             if (hit.transform.CompareTag("Player")) return;
 
             if (hit.transform.TryGetComponent<HitBox>(out var hitBox))
-            {
-                if (hit.collider.CompareTag("head")) // for extra damage
-                {
-                    hitBox.OnBulletHit();
-                }
-                else
-                {
-                    hitBox.OnBulletHit();
-                }
+            {  
+                    hitBox.OnBulletHit();            
                 hitEffect.ShowHitEffect(hit, HitEffect.Effects.Blood, 1f);
             }
             else
