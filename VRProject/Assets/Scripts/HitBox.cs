@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class HitBox : MonoBehaviour
 {
-    public Health health;
+    public KillRedFella KillHim;
    
-    public void OnBulletHit(float damage)
+    public void OnBulletHit()
     {
-        health.TakeDamage(damage);
+        KillHim.Die();
     }
 }

@@ -97,11 +97,11 @@ public class GunShoot : MonoBehaviour
             {
                 if (hit.collider.CompareTag("head")) // for extra damage
                 {
-                    hitBox.OnBulletHit(headDamage);
+                    hitBox.OnBulletHit();
                 }
                 else
                 {
-                    hitBox.OnBulletHit(damage);
+                    hitBox.OnBulletHit();
                 }
                 hitEffect.ShowHitEffect(hit, HitEffect.Effects.Blood, 1f);
             }
