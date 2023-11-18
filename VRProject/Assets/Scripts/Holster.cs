@@ -17,7 +17,7 @@ public class Holster : MonoBehaviour
     float timeRemaining = 10;
     bool timerIsRunning = false;
     bool timeHasCome = false;
-    bool playerDead = false;
+    public bool playerDead = false;
 
     // [SerializeField] TextMeshPro SecondText; // Uncomment if you have a second TextMeshPro that you want to use later
 

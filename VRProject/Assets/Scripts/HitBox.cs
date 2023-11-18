@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class HitBox : MonoBehaviour
 {
-    public KillRedFella KillHim;
-   
+    public bool fellaDied = false;
+
     public void OnBulletHit()
     {
-        KillHim.Die();
+      Die();
+    }
+
+    public void Die()
+    {
+        fellaDied = true;
+        GetComponent<Animator>().enabled = false;
     }
 }

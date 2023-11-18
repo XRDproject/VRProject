@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Anchor
   - Pistol
+  - Holster
   layers:
   - Default
   - TransparentFX

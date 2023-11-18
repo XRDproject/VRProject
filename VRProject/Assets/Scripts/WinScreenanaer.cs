@@ -7,7 +7,7 @@ public class WinScreenanaer : MonoBehaviour
     [SerializeField] GameObject winText;
     [SerializeField] GameObject LoseText;
     [SerializeField] GameObject EndScreen;
-    public KillRedFella fellaDied;
+    public HitBox fellaDied;
     public Holster playerDead;
     void YouWon(){
         EndScreen.SetActive(true);
@@ -20,15 +20,16 @@ public class WinScreenanaer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject holster = GameObject.FindGameObjectWithTag("Holster");
+        playerDead =  holster.GetComponent<Holster>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(fellaDied){
+        if(fellaDied.fellaDied){
             YouWon();
-        }else if(playerDead){
+        }else if(playerDead.playerDead){
             YouLose();
         }
     }
