@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System; // Make sure you are using the TextMeshPro namespace
+using System;
+using UnityEngine.Serialization; // Make sure you are using the TextMeshPro namespace
 
 public class Holster : MonoBehaviour
 {
@@ -18,11 +19,16 @@ public class Holster : MonoBehaviour
     bool timerIsRunning = false;
     bool timeHasCome = false;
     public bool playerDead = false;
-
+    [SerializeField] public GameObject redFella;
+    private Animator redFellaAnimator;
+    
+    private static readonly int Shoot = Animator.StringToHash("onShootingState");
+    private static readonly int Cautious = Animator.StringToHash("onCautiousState");
     // [SerializeField] TextMeshPro SecondText; // Uncomment if you have a second TextMeshPro that you want to use later
 
     void Start()
     {
+        redFellaAnimator = redFella.GetComponent<Animator>();
         ogColor = gameObject.GetComponent<Renderer>().material.color;
         Debug.Log(ogColor.ToString());
         // Ensure the text is visible at the start if it's supposed to be
@@ -39,6 +45,7 @@ public class Holster : MonoBehaviour
         audioSource1.Play();
         timerIsRunning = true;
         timeRemaining = UnityEngine.Random.Range(5, 10);
+        redFellaAnimator.SetTrigger(Cautious);
     }
 
     void OnTriggerStay(Collider objectName)
@@ -46,6 +53,7 @@ public class Holster : MonoBehaviour
         gameObject.GetComponent<Renderer>().material.color = collisionColor.color;   
         if (timerIsRunning && timeRemaining > 0)
         {
+            
             timeRemaining -= Time.deltaTime;
             if (objectName.CompareTag("Pistol"))
             {
@@ -59,6 +67,7 @@ public class Holster : MonoBehaviour
             Debug.Log("Time has run out!");
             audioSource1.Stop();
             audioSource1.PlayOneShot(BellSound);
+            redFellaAnimator.SetTrigger(Shoot);
             FirstText.SetText("Fire!!!");
             FirstText.gameObject.SetActive(true);
             timeRemaining = 0;
@@ -101,5 +110,6 @@ public class Holster : MonoBehaviour
         }
         timerIsRunning = false;
         audioSource1.Stop();
+        redFellaAnimator.SetTrigger(Cautious);
     }
 }

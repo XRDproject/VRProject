@@ -1,10 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HitBox : MonoBehaviour
 {
     public bool fellaDied = false;
+    private Animator _animator;
+    
+    private void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
 
     public void OnBulletHit()
     {
@@ -14,6 +18,6 @@ public class HitBox : MonoBehaviour
     public void Die()
     {
         fellaDied = true;
-        GetComponent<Animator>().enabled = false;
+        _animator.enabled = false;
     }
 }

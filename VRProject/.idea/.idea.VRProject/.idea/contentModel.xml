@@ -215,18 +215,23 @@
           <e p="SampleScene" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="Duel.cs" t="Include" />
           <e p="Enemy.cs" t="Include" />
           <e p="GunShoot.cs" t="Include" />
           <e p="Health.cs" t="Include" />
           <e p="HitBox.cs" t="Include" />
           <e p="HitEffect.cs" t="Include" />
           <e p="Holster.cs" t="Include" />
+          <e p="KillRedFella.cs" t="Include" />
+          <e p="PauseMenu.cs" t="Include" />
           <e p="SceneMover.cs" t="Include" />
           <e p="Target.cs" t="Include" />
+          <e p="WinScreenanaer.cs" t="Include" />
         </e>
         <e p="Settings" t="Include">
           <e p="Project Configuration" t="Include" />
         </e>
+        <e p="Sounds" t="Include" />
         <e p="TextMesh Pro" t="Include">
           <e p="Documentation" t="Include" />
           <e p="Fonts" t="Include">
@@ -3620,29 +3625,6 @@
             <e p="ValidationExceptions.json" t="Include" />
           </e>
           <e p="com.unity.searcher@4.9.2" t="Include">
-            <e p="Editor" t="Include">
-              <e p="AssemblyInfo.cs" t="Include" />
-              <e p="Resources" t="Include">
-                <e p="FlatSkin" t="Include">
-                  <e p="Font" t="Include" />
-                </e>
-                <e p="Searcher.uss" t="Include" />
-                <e p="SearcherItem.uxml" t="Include" />
-                <e p="SearcherWindow.uxml" t="Include" />
-              </e>
-              <e p="Searcher" t="Include">
-                <e p="Searcher.cs" t="Include" />
-                <e p="SearcherAdapter.cs" t="Include" />
-                <e p="SearcherControl.cs" t="Include" />
-                <e p="SearcherDatabase.cs" t="Include" />
-                <e p="SearcherDatabaseBase.cs" t="Include" />
-                <e p="SearcherHighlighter.cs" t="Include" />
-                <e p="SearcherItem.cs" t="Include" />
-                <e p="SearcherTreeUtility.cs" t="Include" />
-                <e p="SearcherWindow.cs" t="Include" />
-              </e>
-              <e p="Unity.Searcher.Editor.asmdef" t="Include" />
-            </e>
             <e p="package.json" t="Include" />
             <e p="Tests" t="Include">
               <e p="Editor" t="Include">

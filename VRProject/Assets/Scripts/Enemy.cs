@@ -11,16 +11,6 @@ public class Enemy : MonoBehaviour
     
     private static readonly int Shoot = Animator.StringToHash("shoot");
     private static readonly int Cautious = Animator.StringToHash("cautious");
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void StartShooting()
     {
