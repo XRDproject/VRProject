@@ -20,11 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a5ce7ad-096a-413b-b06e-c5beb516877f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VRProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VRProject/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VRProject/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VRProject/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VRProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VRProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HitBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HitBox.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Duel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Duel.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Holster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Holster.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +87,7 @@
       <option name="presentableId" value="Default" />
       <updated>1699534286477</updated>
       <workItem from="1699534289219" duration="5482000" />
-      <workItem from="1700327626297" duration="3345000" />
+      <workItem from="1700327626297" duration="5500000" />
     </task>
     <servers />
   </component>

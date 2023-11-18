@@ -20,7 +20,8 @@ public class Holster : MonoBehaviour
     bool timeHasCome = false;
     public bool playerDead = false;
     [SerializeField] public GameObject redFella;
-    private Animator redFellaAnimator;
+    private Animator _redFellaAnimator;
+    private BoxCollider _redFellaBoxCollider;
     
     private static readonly int Shoot = Animator.StringToHash("onShootingState");
     private static readonly int Cautious = Animator.StringToHash("onCautiousState");
@@ -28,7 +29,8 @@ public class Holster : MonoBehaviour
 
     void Start()
     {
-        redFellaAnimator = redFella.GetComponent<Animator>();
+        _redFellaAnimator = redFella.GetComponent<Animator>();
+        _redFellaBoxCollider = redFella.GetComponent<BoxCollider>();
         ogColor = gameObject.GetComponent<Renderer>().material.color;
         Debug.Log(ogColor.ToString());
         // Ensure the text is visible at the start if it's supposed to be
@@ -45,7 +47,7 @@ public class Holster : MonoBehaviour
         audioSource1.Play();
         timerIsRunning = true;
         timeRemaining = UnityEngine.Random.Range(5, 10);
-        redFellaAnimator.SetTrigger(Cautious);
+        _redFellaAnimator.SetTrigger(Cautious);
     }
 
     void OnTriggerStay(Collider objectName)
@@ -65,9 +67,10 @@ public class Holster : MonoBehaviour
         else if (timeHasCome)
         {
             Debug.Log("Time has run out!");
+            _redFellaBoxCollider.enabled = true;
             audioSource1.Stop();
             audioSource1.PlayOneShot(BellSound);
-            redFellaAnimator.SetTrigger(Shoot);
+            _redFellaAnimator.SetTrigger(Shoot);
             FirstText.SetText("Fire!!!");
             FirstText.gameObject.SetActive(true);
             timeRemaining = 0;
@@ -110,6 +113,6 @@ public class Holster : MonoBehaviour
         }
         timerIsRunning = false;
         audioSource1.Stop();
-        redFellaAnimator.SetTrigger(Cautious);
+        _redFellaAnimator.SetTrigger(Cautious);
     }
 }
