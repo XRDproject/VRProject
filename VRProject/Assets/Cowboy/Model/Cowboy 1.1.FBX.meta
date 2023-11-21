@@ -336,12 +336,17 @@ ModelImporter:
   - first:
       137: 13700002
     second: CowBoy
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 01 - Default
+    second: {fileID: 2100000, guid: 0c97510d095165340a8f4d24bf6be7e1, type: 2}
   materials:
     materialImportMode: 1
-    materialName: 1
+    materialName: 2
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

@@ -25,6 +25,7 @@ public class Holster : MonoBehaviour
     
     private static readonly int Shoot = Animator.StringToHash("onShootingState");
     private static readonly int Cautious = Animator.StringToHash("onCautiousState");
+    private static readonly int IsPlayerAlive = Animator.StringToHash("IsPlayerAlive");
     // [SerializeField] TextMeshPro SecondText; // Uncomment if you have a second TextMeshPro that you want to use later
 
     void Start()
@@ -81,25 +82,18 @@ public class Holster : MonoBehaviour
                 objectName.GetComponent<GunShoot>().canShoot = true;
             }
             StartCoroutine(KillThePlayer());
-           // KillThePlayer();
             timeHasCome = false;
         }
     }
-    void  KillThePlayer1()
-    {int randomNumber = UnityEngine.Random.Range(0, 11);
-        if (randomNumber <= 9 )
-        {
-            playerDead = true;
-            // Handle player's death
-            Debug.Log("Player has died.");
-        }
-    }
+
     IEnumerator  KillThePlayer(){
-         yield return new WaitForSeconds(1);
+         float randomNumberTimer = UnityEngine.Random.Range(0f, 0.7f);
+         yield return new WaitForSeconds(randomNumberTimer);
          int randomNumber = UnityEngine.Random.Range(0, 11);
          if (randomNumber <= 9 )
          {
              playerDead = true;
+             _redFellaAnimator.SetBool(IsPlayerAlive,false);
              // Handle player's death
              Debug.Log("Player has died.");
          }

@@ -6,6 +6,7 @@ public class HitBox : MonoBehaviour
     private Animator _animator;
     private BoxCollider _boxCollider;
     private static readonly int Dying  = Animator.StringToHash("onDyingState");
+    private static readonly int IsEnemyAlive  = Animator.StringToHash("IsEnemyAlive");
     private void Start()
     {
         _animator = GetComponent<Animator>();
@@ -19,8 +20,10 @@ public class HitBox : MonoBehaviour
 
     public void Die()
     {   
-        _animator.SetTrigger(Dying);
+        
         fellaDied = true;
         _boxCollider.enabled = false;
+        _animator.SetBool(IsEnemyAlive,false);
+        _animator.SetTrigger(Dying);
     }
 }
