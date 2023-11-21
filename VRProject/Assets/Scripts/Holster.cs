@@ -36,6 +36,7 @@ public class Holster : MonoBehaviour
         // Ensure the text is visible at the start if it's supposed to be
         if (FirstText != null)
             FirstText.enabled = true;
+        
     }
 
 
@@ -70,8 +71,8 @@ public class Holster : MonoBehaviour
             _redFellaBoxCollider.enabled = true;
             audioSource1.Stop();
             audioSource1.PlayOneShot(BellSound);
-            _redFellaAnimator.SetTrigger(Shoot);
             FirstText.SetText("Fire!!!");
+            _redFellaAnimator.SetTrigger(Shoot);
             FirstText.gameObject.SetActive(true);
             timeRemaining = 0;
             timerIsRunning = false;
@@ -80,19 +81,28 @@ public class Holster : MonoBehaviour
                 objectName.GetComponent<GunShoot>().canShoot = true;
             }
             StartCoroutine(KillThePlayer());
+           // KillThePlayer();
             timeHasCome = false;
         }
     }
-
-
-    IEnumerator  KillThePlayer(){
-         yield return new WaitForSeconds(3);
-         if (!fellaDied)
+    void  KillThePlayer1()
+    {int randomNumber = UnityEngine.Random.Range(0, 11);
+        if (randomNumber <= 9 )
         {
             playerDead = true;
             // Handle player's death
             Debug.Log("Player has died.");
         }
+    }
+    IEnumerator  KillThePlayer(){
+         yield return new WaitForSeconds(1);
+         int randomNumber = UnityEngine.Random.Range(0, 11);
+         if (randomNumber <= 9 )
+         {
+             playerDead = true;
+             // Handle player's death
+             Debug.Log("Player has died.");
+         }
     }
 
     void OnTriggerExit(Collider objectName)
