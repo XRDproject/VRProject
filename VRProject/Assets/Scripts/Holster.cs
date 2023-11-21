@@ -90,7 +90,7 @@ public class Holster : MonoBehaviour
          float randomNumberTimer = UnityEngine.Random.Range(0f, 0.7f);
          yield return new WaitForSeconds(randomNumberTimer);
          int randomNumber = UnityEngine.Random.Range(0, 11);
-         if (randomNumber <= 9 )
+         if (randomNumber <= 5 )
          {
              playerDead = true;
              _redFellaAnimator.SetBool(IsPlayerAlive,false);

@@ -1,3 +1,4 @@
+using Unity.XR.CoreUtils;
 using UnityEngine;
 
 public class HitBox : MonoBehaviour
@@ -7,10 +8,19 @@ public class HitBox : MonoBehaviour
     private BoxCollider _boxCollider;
     private static readonly int Dying  = Animator.StringToHash("onDyingState");
     private static readonly int IsEnemyAlive  = Animator.StringToHash("IsEnemyAlive");
+    [SerializeField] public GameObject player;
     private void Start()
     {
         _animator = GetComponent<Animator>();
         _boxCollider = GetComponent<BoxCollider>();
+        //player = GetComponent<Holster>(); 
+        // GameObject holster = GameObject.FindGameObjectWithTag("Player");
+        // player =  holster;  
+        // // transform.LookAt(player.transform);
+    }
+
+    private void Update(){
+        transform.LookAt(player.transform);
     }
 
     public void OnBulletHit()
