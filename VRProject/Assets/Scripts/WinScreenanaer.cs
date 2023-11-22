@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WinScreenanaer : MonoBehaviour
 {
     [SerializeField] GameObject winText;
     [SerializeField] GameObject LoseText;
     [SerializeField] GameObject EndScreen;
+    [SerializeField] GameObject MenuPanel;
+    [SerializeField] GameObject[] MenuButtons;
+
     public HitBox fellaDied;
     public Holster playerDead;
     private BoxCollider fellaBoxCollider;
@@ -21,6 +26,15 @@ public class WinScreenanaer : MonoBehaviour
         fellaBoxCollider.enabled = false;
         EndScreen.SetActive(true);
         LoseText.SetActive(true);
+        MenuPanel.GetComponent<Image>().color = new Color(255,0,0,100);
+        foreach (var button in MenuButtons)
+        {
+            var tmpButton = button.GetComponent<Button>();
+            var colors = tmpButton.colors;
+            colors.normalColor = Color.red;
+            tmpButton.colors = colors;
+        }
+
     }
     // Start is called before the first frame update
     void Start()
