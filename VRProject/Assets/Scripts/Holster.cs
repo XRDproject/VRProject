@@ -78,8 +78,6 @@ public class Holster : MonoBehaviour
             _redFellaBoxCollider.enabled = true;
             audioSource1.Stop();
             audioSource1.PlayOneShot(BellSound);
-            _pistolScript.Shoot();
-            _redFellaAnimator.SetTrigger(Shoot);
             timeRemaining = 0;
             FirstText.SetText("");
             timerIsRunning = false;
@@ -93,9 +91,11 @@ public class Holster : MonoBehaviour
     }
 
     IEnumerator  KillThePlayer(){
-         float randomNumberTimer = UnityEngine.Random.Range(0.6f, 1.1f);
-         yield return new WaitForSeconds(randomNumberTimer);
-         if (!fellaDied)
+        _redFellaAnimator.SetTrigger(Shoot);
+        float randomNumberTimer = UnityEngine.Random.Range(0.6f, 1.1f);
+        yield return new WaitForSeconds(randomNumberTimer);
+        _pistolScript.Shoot();
+        if (!fellaDied)
          {
              playerDead = true;
              _redFellaAnimator.SetBool(IsPlayerAlive,false);
