@@ -226,7 +226,6 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Duel.cs" t="Include" />
-          <e p="Enemy.cs" t="Include" />
           <e p="GunShoot.cs" t="Include" />
           <e p="Health.cs" t="Include" />
           <e p="HitBox.cs" t="Include" />
@@ -234,6 +233,7 @@
           <e p="Holster.cs" t="Include" />
           <e p="KillRedFella.cs" t="Include" />
           <e p="PauseMenu.cs" t="Include" />
+          <e p="PistolScript.cs" t="Include" />
           <e p="SceneMover.cs" t="Include" />
           <e p="Target.cs" t="Include" />
           <e p="WinScreenanaer.cs" t="Include" />

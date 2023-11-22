@@ -21,10 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3a5ce7ad-096a-413b-b06e-c5beb516877f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VRProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VRProject/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VRProject/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VRProject/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VRProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VRProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Cowboy/Animators/Custom_Cowboy_Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Cowboy/Animators/Custom_Cowboy_Controller.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HitBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HitBox.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Cowboy/Animations/Shooting.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Cowboy/Animations/Shooting.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Duel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Duel.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Holster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Holster.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +35,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3334DB72-DAA2-4CF1-ACD4-5AD1E834F2EB/c9/be0bfec0/ParticleSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3B24CC7F-A979-4ED8-AB04-312C53E6DEDD/b2/884984f6/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/79C7B132-C517-45CB-AE03-EEBEA8111C0E/7d/38706217/EventDispatcher.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -46,6 +46,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyControls/StateManagement/CautiousState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HitBox.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PauseMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PistolScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Holster.cs" />
       </list>
     </option>
@@ -96,6 +98,8 @@
       <workItem from="1700327626297" duration="6727000" />
       <workItem from="1700526142098" duration="3785000" />
       <workItem from="1700530457055" duration="654000" />
+      <workItem from="1700650202304" duration="29000" />
+      <workItem from="1700650669905" duration="4868000" />
     </task>
     <servers />
   </component>

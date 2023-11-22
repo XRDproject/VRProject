@@ -20,9 +20,10 @@ public class Holster : MonoBehaviour
     bool timeHasCome = false;
     public bool playerDead = false;
     [SerializeField] public GameObject redFella;
+    [SerializeField] public GameObject pistol;
     private Animator _redFellaAnimator;
     private BoxCollider _redFellaBoxCollider;
-    
+    private PistolScript _pistolScript;
     private static readonly int Shoot = Animator.StringToHash("onShootingState");
     private static readonly int Cautious = Animator.StringToHash("onCautiousState");
     private static readonly int IsPlayerAlive = Animator.StringToHash("IsPlayerAlive");
@@ -32,6 +33,7 @@ public class Holster : MonoBehaviour
     {
         _redFellaAnimator = redFella.GetComponent<Animator>();
         _redFellaBoxCollider = redFella.GetComponent<BoxCollider>();
+        _pistolScript = pistol.GetComponent<PistolScript>();
         ogColor = gameObject.GetComponent<Renderer>().material.color;
         Debug.Log(ogColor.ToString());
         // Ensure the text is visible at the start if it's supposed to be
@@ -73,6 +75,7 @@ public class Holster : MonoBehaviour
             audioSource1.Stop();
             audioSource1.PlayOneShot(BellSound);
             FirstText.SetText("Fire!!!");
+            _pistolScript.Shoot();
             _redFellaAnimator.SetTrigger(Shoot);
             FirstText.gameObject.SetActive(true);
             timeRemaining = 0;
