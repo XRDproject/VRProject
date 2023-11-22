@@ -72,6 +72,7 @@ public class GunShoot : MonoBehaviour
         var channel = 1;
         var command = UnityEngine.InputSystem.XR.Haptics.SendHapticImpulseCommand.Create(channel, 1f, 0.1f);
         device.ExecuteCommand(ref command);
+        OpenXRInput.SendHapticImpulse(haptics, 1, 1, XRController.rightHand); //trying for Oculus
     }
 
     void Reload()
