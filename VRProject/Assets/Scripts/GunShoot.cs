@@ -57,6 +57,7 @@ public class GunShoot : MonoBehaviour
                 Shoot();
                 if (ctx.control.device is XRController device)
                 {
+
                     Rumble(device);//vibrate
 
                     //OpenXRInput.SendHapticImpulse(haptics, 1f, 1000f, device); //Right Hand Haptic Impulse, not working, found alternative
@@ -74,10 +75,10 @@ public class GunShoot : MonoBehaviour
     private void Rumble(InputDevice device)
     {
         //2-thumb area?, 1- trigger, 0 - whole body
-        var channel = 1;
-        var command = UnityEngine.InputSystem.XR.Haptics.SendHapticImpulseCommand.Create(channel, 1f, 1f);
+        var channel = 0;
+        var command = UnityEngine.InputSystem.XR.Haptics.SendHapticImpulseCommand.Create(channel, 1f, 0.5f);
         device.ExecuteCommand(ref command);
-        OpenXRInput.SendHapticImpulse(haptics, 1, 1, XRController.rightHand); //trying for Oculus
+        //OpenXRInput.SendHapticImpulse(haptics, 1, 10000, XRController.rightHand); //trying for Oculus
         Debug.Log("tried to vibrate");
     }
 
