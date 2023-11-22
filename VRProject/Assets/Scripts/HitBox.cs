@@ -13,10 +13,6 @@ public class HitBox : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _boxCollider = GetComponent<BoxCollider>();
-        //player = GetComponent<Holster>(); 
-        // GameObject holster = GameObject.FindGameObjectWithTag("Player");
-        // player =  holster;  
-        // // transform.LookAt(player.transform);
     }
 
     private void Update(){
@@ -33,7 +29,7 @@ public class HitBox : MonoBehaviour
         
         fellaDied = true;
         _boxCollider.enabled = false;
-        _animator.SetBool(IsEnemyAlive,false);
+        _animator.SetBool(IsEnemyAlive, false);
         _animator.SetTrigger(Dying);
     }
 }
