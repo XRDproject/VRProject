@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.Serialization; // Make sure you are using the TextMeshPro namespace
+using static Unity.VisualScripting.Member;
 
 public class Holster : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class Holster : MonoBehaviour
      [SerializeField] AudioClip TickingSound;
      [SerializeField] AudioSource audioSource1;
      [SerializeField] AudioSource audioSource2;
+    [SerializeField] AudioSource bgMusic;
+    public float fadeTime = 1f; // fade time in seconds
     [SerializeField] AudioClip BellSound;
     KillRedFella fellaDied;
     float timeRemaining = 10;
@@ -52,6 +55,7 @@ public class Holster : MonoBehaviour
         timerIsRunning = true;
         timeRemaining = UnityEngine.Random.Range(5, 10);
         _redFellaAnimator.SetTrigger(Cautious);
+        StartCoroutine(FadeSound());
     }
 
     void OnTriggerStay(Collider objectName)
@@ -74,11 +78,10 @@ public class Holster : MonoBehaviour
             _redFellaBoxCollider.enabled = true;
             audioSource1.Stop();
             audioSource1.PlayOneShot(BellSound);
-            FirstText.SetText("Fire!!!");
             _pistolScript.Shoot();
             _redFellaAnimator.SetTrigger(Shoot);
-            FirstText.gameObject.SetActive(true);
             timeRemaining = 0;
+            FirstText.SetText("");
             timerIsRunning = false;
             if (objectName.CompareTag("Pistol"))
             {
@@ -90,16 +93,53 @@ public class Holster : MonoBehaviour
     }
 
     IEnumerator  KillThePlayer(){
-         float randomNumberTimer = UnityEngine.Random.Range(0f, 0.7f);
+         float randomNumberTimer = UnityEngine.Random.Range(0.6f, 1.1f);
          yield return new WaitForSeconds(randomNumberTimer);
-         int randomNumber = UnityEngine.Random.Range(0, 11);
-         if (randomNumber <= 7 )
+         if (!fellaDied)
          {
              playerDead = true;
              _redFellaAnimator.SetBool(IsPlayerAlive,false);
              // Handle player's death
              Debug.Log("Player has died.");
          }
+    }
+
+    IEnumerator FadeSound()
+    {
+        if (fadeTime == 0)
+        {
+            bgMusic.volume = 0;
+            yield break;
+        }
+        float t = fadeTime;
+        while (t > 0)
+        {
+            yield return null;
+            t -= Time.deltaTime;
+            bgMusic.volume = t / fadeTime;
+        }
+        yield break;
+    }
+
+    IEnumerator IncreaseSound()
+    {
+        float targetVolume = 1.0f; 
+        float startVolume = 0.0f; 
+
+        if (fadeTime == 0)
+        {
+            bgMusic.volume = targetVolume;
+            yield break;
+        }
+
+        float t = 0.0f;
+        while (t < fadeTime)
+        {
+            yield return null;
+            t += Time.deltaTime;
+            bgMusic.volume = Mathf.Lerp(startVolume, targetVolume, t / fadeTime);
+        }
+        yield break;
     }
 
     void OnTriggerExit(Collider objectName)
@@ -121,5 +161,6 @@ public class Holster : MonoBehaviour
         timerIsRunning = false;
         _redFellaAnimator.SetTrigger(Cautious);
         audioSource1.Stop();
+        StartCoroutine(IncreaseSound());
     }
 }
