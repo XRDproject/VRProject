@@ -15,6 +15,7 @@ public class GunShoot : MonoBehaviour
     [Header("Inputs")]
     [Tooltip("Specify trigger button")][SerializeField] InputActionReference triger;
     [Tooltip("Specify controller haptics")][SerializeField] InputActionReference haptics;
+    
 
     [Header("Gun stats")]
     public float damage = 10f;
@@ -54,9 +55,13 @@ public class GunShoot : MonoBehaviour
             if (currentAmmo > 0 && canShoot)
             {
                 Shoot();
-                //OpenXRInput.SendHapticImpulse(haptics, 1f, 4f, XRController.rightHand); //Right Hand Haptic Impulse, not working, found alternative
                 if (ctx.control.device is XRController device)
+                {
                     Rumble(device);//vibrate
+
+                    //OpenXRInput.SendHapticImpulse(haptics, 1f, 1000f, device); //Right Hand Haptic Impulse, not working, found alternative
+                    //Debug.Log(device.name);
+                }
             }
             else audioSource.PlayOneShot(gunNoAmmoSound);
         };
@@ -70,9 +75,10 @@ public class GunShoot : MonoBehaviour
     {
         //2-thumb area?, 1- trigger, 0 - whole body
         var channel = 1;
-        var command = UnityEngine.InputSystem.XR.Haptics.SendHapticImpulseCommand.Create(channel, 1f, 0.1f);
+        var command = UnityEngine.InputSystem.XR.Haptics.SendHapticImpulseCommand.Create(channel, 1f, 1f);
         device.ExecuteCommand(ref command);
         OpenXRInput.SendHapticImpulse(haptics, 1, 1, XRController.rightHand); //trying for Oculus
+        Debug.Log("tried to vibrate");
     }
 
     void Reload()
